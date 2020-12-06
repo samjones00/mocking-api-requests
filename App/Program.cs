@@ -29,7 +29,7 @@ namespace App
                 {
                     Location = "London",
                     BaseUrl = "http://api.openweathermap.org/data/2.5/",
-                    AppId = "02ebee3c9a21db50b26de1a5dd0a88a1"
+                    AppId = "YOUR-API-KEY"
                 };
 
                 var result = await service.GetWeatherAsync(options);
