@@ -37,7 +37,7 @@ namespace Tests
 
             var result = await weatherService.GetWeatherAsync(request);
 
-            handlerMock.Protected().Verify("SendAsync", Times.Exactly(1), ItExpr.Is<HttpRequestMessage>(req => req.Method == HttpMethod.Get && req.RequestUri == new Uri($"{httpClient.BaseAddress}{request.ResolveUrl}")), ItExpr.IsAny<CancellationToken>());
+            handlerMock.Protected().Verify("SendAsync", Times.Once(), ItExpr.Is<HttpRequestMessage>(req => req.Method == HttpMethod.Get && req.RequestUri == new Uri($"{httpClient.BaseAddress}{request.ResolveUrl}")), ItExpr.IsAny<CancellationToken>());
 
             Assert.Equal("London", result.name);
             Assert.NotNull(result);

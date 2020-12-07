@@ -13,7 +13,6 @@ namespace App
         static async Task Main(string[] args)
         {
             var host = new HostBuilder()
-
                .ConfigureServices((hostingContext, services) =>
                {
                    services.AddSingleton<IWeatherService, WeatherService>();
@@ -25,14 +24,14 @@ namespace App
             {
                 var service = serviceScope.ServiceProvider.GetService<IWeatherService>();
 
-                var options = new WeatherServiceRequest
+                var request = new WeatherServiceRequest
                 {
                     Location = "London",
                     BaseUrl = "http://api.openweathermap.org/data/2.5/",
                     AppId = "YOUR-API-KEY"
                 };
 
-                var result = await service.GetWeatherAsync(options);
+                var result = await service.GetWeatherAsync(request);
 
                 Console.WriteLine($"Location: {result.name}, temp: {result.main.temp}");
             }
