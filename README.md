@@ -1,5 +1,5 @@
 ![CI Pipeline](https://github.com/samjones00/mocking-api-requests/workflows/.NET%20Core/badge.svg)
 
-# Mocking API Requests using xUnit and Moq
+# Mocking API Requests
 
-A simple example of mocking `HttpClient` and testing the responses in dotnet Core 3.1.
+A simple example of mocking `HttpClient` and testing the responses in dotnet Core 3.1 using xUnit and Moq.
